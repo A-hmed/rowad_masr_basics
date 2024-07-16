@@ -19,18 +19,18 @@ import java.util.ArrayList;
 
 public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ContactsViewHolder> {
     ArrayList<ContactDM> contacts;
-
-
     public ContactsAdapter(ArrayList<ContactDM> contacts) {
         this.contacts = contacts;
     }
 
-
-    //ContactsActivity activity;
-
     ContactsAdapter(ArrayList<ContactDM> contacts,ContactsActivity activity){
         this.contacts = contacts;
       //  this.activity = activity;
+    }
+
+    public void refreshList(ArrayList<ContactDM> newList){
+        this.contacts = newList;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -54,6 +54,9 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
                onClickListener.onItemClick(contactDM, position);
             }
         });
+        holder.deleteIcon.setOnClickListener(view -> {
+            onClickListener.onDeleteIconClick(contactDM, position);
+        });
 //        holder.profileIv.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -65,6 +68,8 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
     OnClickListener onClickListener;
     interface OnClickListener{
         void onItemClick(ContactDM contactDM, int position);
+
+        void onDeleteIconClick(ContactDM contactDM, int position);
     }
 
     @Override
@@ -72,13 +77,11 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
         return contacts.size();
     }
 
-
-
-
     class ContactsViewHolder extends RecyclerView.ViewHolder {
         ImageView profileIv;
         TextView nameTv;
         TextView phoneNumber;
+        ImageView deleteIcon;
 
         ContactsViewHolder(View view) {
             super(view);
@@ -87,6 +90,8 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
             nameTv = view.findViewById(R.id.contact_name_textview);
 
             phoneNumber = view.findViewById(R.id.contact_phone_number_textview);
+
+            deleteIcon = view.findViewById(R.id.contact_delete_icon);
         }
     }
 }

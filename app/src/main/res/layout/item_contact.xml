@@ -37,4 +37,14 @@
         app:layout_constraintStart_toEndOf="@id/contact_profile_image_view"
         app:layout_constraintTop_toBottomOf="@id/contact_name_textview"
         tools:text="0111111111" />
+
+    <ImageView
+        android:id="@+id/contact_delete_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
