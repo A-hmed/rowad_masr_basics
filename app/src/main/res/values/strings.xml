@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Android Basics</string>
+    <string name="email"> Email </string>
+    <string name="write_your_password_here">Write your password here</string>
+    <string name="password">password</string>
+    <string name="write_your_email_here">Write your email here</string>
+    <string name="login">Login</string>
+    <string name="title_activity_categories">CategoriesActivity</string>
+</resources>

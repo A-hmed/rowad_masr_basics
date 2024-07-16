@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android Basics</string>
+    <string name="email"> البريد الالكتروني </string>
+    <string name="write_your_password_here">ادخل كلمه المرور</string>
+    <string name="password">كلمه المرور</string>
+    <string name="write_your_email_here">ادخل البريد الالكتروني</string>
+</resources>
